@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self reverseChar:@"Keita"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +49,18 @@
     // time = 0(n)
         
     return YES;
+}
+
+- (void)reverseChar:(NSString *)str
+{
+    NSMutableString *reversedString = [NSMutableString string];
+    NSInteger charIndex = [str length];
+    while (charIndex > 0) {
+        charIndex--;
+        NSRange subStrRange = NSMakeRange(charIndex, 1);
+        [reversedString appendString:[str substringWithRange:subStrRange]];
+    }
+    NSLog(@"%@", reversedString);
 }
 
 @end
