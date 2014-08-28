@@ -29,27 +29,53 @@
 
 - (BOOL)isUniqueChars:(NSString *)string
 {
-    if ([string length] > 256) {
-        // is string greater than # of ASCII characters
-        return NO;
-    }
+    if ([string length] > 256) {return NO;}
     
     bool char_set[256];
-    memset(char_set, 0, 256);
-    // Store an array of boolean values to indicate if the car is unique or not
+    
     for (int i = 0; i < [string length]; i++) {
-        int value = ([string characterAtIndex:i] - 'a');
-        if (char_set[value]) {
-            return NO; // duplicate
+        unichar val = [string characterAtIndex:i];
+        int intVal = val;
+        
+        if (char_set[intVal]) {
+            return NO;
         }
-        char_set[value] = YES;
+        char_set[intVal] = YES;
     }
     
-    // space = n
-    // time = 0(n)
-        
-    return YES;
+    return NO;
 }
+
+
+
+
+
+
+
+
+//- (BOOL)isUniqueChars:(NSString *)string
+//{
+//    if ([string length] > 256) {
+//        // is string greater than # of ASCII characters
+//        return NO;
+//    }
+//    
+//    bool char_set[256];
+//    memset(char_set, 0, 256);
+//    // Store an array of boolean values to indicate if the car is unique or not
+//    for (int i = 0; i < [string length]; i++) {
+//        int value = ([string characterAtIndex:i] - 'a');
+//        if (char_set[value]) {
+//            return NO; // duplicate
+//        }
+//        char_set[value] = YES;
+//    }
+//    
+//    // space = n
+//    // time = 0(n)
+//        
+//    return YES;
+//}
 
 - (void)reverseChar:(NSString *)str
 {
@@ -62,5 +88,22 @@
     }
     NSLog(@"%@", reversedString);
 }
+
+- (BOOL)checkPermutationWithStr1:(NSString *)str1 Str2:(NSString *)str2
+{
+    
+    return YES;
+}
+
+- (NSString *)sortString:(NSString *)string
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < [string length]; i++) {
+        [array addObject:[NSString stringWithFormat:@"%c", [string characterAtIndex:i]]];
+    }
+    return string;
+}
+
+
 
 @end
