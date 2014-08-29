@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *myTextField;
+@property (weak, nonatomic) IBOutlet UILabel *myLabel;
+
+- (IBAction)textReturn:(id)sender;
+- (IBAction)myButton:(id)sender;
 @end
