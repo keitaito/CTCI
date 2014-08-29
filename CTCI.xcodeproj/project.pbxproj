@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		234E63EF19B0020400F0B93A /* UniqueCharaceter.m in Sources */ = {isa = PBXBuildFile; fileRef = 234E63EE19B0020400F0B93A /* UniqueCharaceter.m */; };
+		234E63F319B016E800F0B93A /* ReverseString.m in Sources */ = {isa = PBXBuildFile; fileRef = 234E63F219B016E800F0B93A /* ReverseString.m */; };
 		237EFE8619A315870092D328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8519A315870092D328 /* Foundation.framework */; };
 		237EFE8819A315880092D328 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8719A315880092D328 /* CoreGraphics.framework */; };
 		237EFE8A19A315880092D328 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8919A315880092D328 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		234E63ED19B0020300F0B93A /* UniqueCharaceter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniqueCharaceter.h; path = Classes/UniqueCharaceter.h; sourceTree = "<group>"; };
 		234E63EE19B0020400F0B93A /* UniqueCharaceter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniqueCharaceter.m; path = Classes/UniqueCharaceter.m; sourceTree = "<group>"; };
+		234E63F119B016E800F0B93A /* ReverseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReverseString.h; path = Classes/ReverseString.h; sourceTree = "<group>"; };
+		234E63F219B016E800F0B93A /* ReverseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReverseString.m; path = Classes/ReverseString.m; sourceTree = "<group>"; };
 		237EFE8219A315870092D328 /* CTCI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTCI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237EFE8519A315870092D328 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237EFE8719A315880092D328 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,8 @@
 			children = (
 				234E63ED19B0020300F0B93A /* UniqueCharaceter.h */,
 				234E63EE19B0020400F0B93A /* UniqueCharaceter.m */,
+				234E63F119B016E800F0B93A /* ReverseString.h */,
+				234E63F219B016E800F0B93A /* ReverseString.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234E63F319B016E800F0B93A /* ReverseString.m in Sources */,
 				237EFE9C19A315880092D328 /* ViewController.m in Sources */,
 				237EFE9619A315880092D328 /* AppDelegate.m in Sources */,
 				234E63EF19B0020400F0B93A /* UniqueCharaceter.m in Sources */,

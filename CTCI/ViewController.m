@@ -17,6 +17,7 @@
 {
     NSString *myString;
     UniqueCharaceter *uniqueCharacter;
+    ReverseString *reverseStringInstance;
     NSString *result;
 }
 
@@ -28,8 +29,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     myString = [[NSString alloc] init];
     uniqueCharacter = [[UniqueCharaceter alloc] init];
+    reverseStringInstance = [[ReverseString alloc] init];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,7 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Touch Handling
+#pragma mark - Touch and Input Handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -55,20 +56,15 @@
 - (IBAction)uniqueCharButton:(id)sender {
     result = [uniqueCharacter UniqueCharString:myString];
     [self outputMethod];
-    
-    //    myString = self.myTextField.text;
-    
-//    result = [NSString stringWithFormat:@"This string is unique? \n%s", ([uniqueCharacter isUniqueChars:myString] ? "YES" : "NO")];
-//    self.myLabel.text = result;
 }
 
 - (IBAction)reverseStrButton:(id)sender {
-    result = [self reverseString:myString];
+    result = [reverseStringInstance reverseString:myString];
     [self outputMethod];
 }
 
 
-
+#pragma mark - Output Handling
 
 - (void) outputMethod {
     self.myLabel.text = result;
@@ -80,37 +76,5 @@
 
 
 #pragma mark - Methods
-
-- (NSString *)reverseString:(NSString *)string {
-    NSMutableString *reversedString = [NSMutableString string];
-    NSInteger charIndex = [string length];
-    while (charIndex > 0) {
-        charIndex --;
-        NSRange subStrRange = NSMakeRange(charIndex, 1);
-        [reversedString appendString:[string substringWithRange:subStrRange]];
-    }
-
-//    NSLog(@"%@", reversedString);    
-    return reversedString;
-}
-
-
-//- (BOOL)checkPermutationWithStr1:(NSString *)str1 Str2:(NSString *)str2
-//{
-//    
-//    return YES;
-//}
-//
-//- (NSString *)sortString:(NSString *)string
-//{
-//    NSMutableArray *array = [NSMutableArray array];
-//    for (int i = 0; i < [string length]; i++) {
-//        [array addObject:[NSString stringWithFormat:@"%c", [string characterAtIndex:i]]];
-//    }
-//    return string;
-//}
-
-
-
 
 @end

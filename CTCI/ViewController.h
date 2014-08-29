@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UniqueCharaceter.h"
+#import "ReverseString.h"
 
 @interface ViewController : UIViewController
 
