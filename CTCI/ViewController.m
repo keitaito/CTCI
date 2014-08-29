@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -15,6 +16,8 @@
 @implementation ViewController
 {
     NSString *myString;
+    UniqueCharaceter *uniqueCharacter;
+    NSString *result;
 }
 
 #pragma mark - Lifecycle
@@ -23,9 +26,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    myString = [[NSString alloc]init];
-    
+    myString = [[NSString alloc] init];
+    uniqueCharacter = [[UniqueCharaceter alloc] init];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -38,49 +42,46 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+    myString = self.myTextField.text;
+}
+
+- (IBAction)textReturn:(id)sender {
+    [self.view endEditing:YES];
+    myString = self.myTextField.text;
 }
 
 #pragma mark - Actions
 
-- (IBAction)textReturn:(id)sender {
-    [self.view endEditing:YES];
+- (IBAction)uniqueCharButton:(id)sender {
+    result = [uniqueCharacter UniqueCharString:myString];
+    [self outputMethod];
+    
+    //    myString = self.myTextField.text;
+    
+//    result = [NSString stringWithFormat:@"This string is unique? \n%s", ([uniqueCharacter isUniqueChars:myString] ? "YES" : "NO")];
+//    self.myLabel.text = result;
 }
 
-- (IBAction)myButton:(id)sender {
-    myString = self.myTextField.text;
-    
-    NSString *result = [NSString stringWithFormat:@"This string is unique? \n%s", ([self isUniqueChars:myString] ? "YES" : "NO")];
-    self.myLabel.text = result;
-    [self reverseString:myString];
+- (IBAction)reverseStrButton:(id)sender {
+    result = [self reverseString:myString];
+    [self outputMethod];
 }
+
+
+
+
+- (void) outputMethod {
+    self.myLabel.text = result;
+    self.myLabel.numberOfLines = 0;
+    self.myLabel.frame = CGRectMake(20, 120, 280, 120);
+    [self.myLabel sizeToFit];
+    self.myLabel.textAlignment = NSTextAlignmentCenter;
+}
+
 
 #pragma mark - Methods
 
-- (BOOL)isUniqueChars:(NSString *)string
-{
-    // If string length is more than 256, there is always characters which is not unique (more than 2) becuase of ASCII code.
-    if ([string length] > 256) {return NO;}
-    
-    // Make ASCII character set.
-    bool char_set[256];
-    // Initialize.
-    memset(char_set, 0, sizeof(char_set));
-    
-    // Check each characters of the string if it is unique or not. If it is unique, set yes in character set. Characters can change integer because of ASCII code.
-    for (int i = 0; i < [string length]; i++) {
-        unichar val = [string characterAtIndex:i];
-        // Convert to integer from unichar
-        int intVal = val;
-        
-        if (char_set[intVal]) {
-            return NO;
-        }
-        char_set[intVal] = YES;
-    }
-    return YES;
-}
-
-- (void)reverseString:(NSString *)string {
+- (NSString *)reverseString:(NSString *)string {
     NSMutableString *reversedString = [NSMutableString string];
     NSInteger charIndex = [string length];
     while (charIndex > 0) {
@@ -88,7 +89,9 @@
         NSRange subStrRange = NSMakeRange(charIndex, 1);
         [reversedString appendString:[string substringWithRange:subStrRange]];
     }
-    NSLog(@"%@", reversedString);
+
+//    NSLog(@"%@", reversedString);    
+    return reversedString;
 }
 
 

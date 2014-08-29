@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UniqueCharaceter.h"
 
 @interface ViewController : UIViewController
 
@@ -14,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
 
 - (IBAction)textReturn:(id)sender;
-- (IBAction)myButton:(id)sender;
+
+- (IBAction)uniqueCharButton:(id)sender;
+- (IBAction)reverseStrButton:(id)sender;
 @end

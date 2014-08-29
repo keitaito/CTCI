@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234E63EF19B0020400F0B93A /* UniqueCharaceter.m in Sources */ = {isa = PBXBuildFile; fileRef = 234E63EE19B0020400F0B93A /* UniqueCharaceter.m */; };
 		237EFE8619A315870092D328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8519A315870092D328 /* Foundation.framework */; };
 		237EFE8819A315880092D328 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8719A315880092D328 /* CoreGraphics.framework */; };
 		237EFE8A19A315880092D328 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237EFE8919A315880092D328 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		234E63ED19B0020300F0B93A /* UniqueCharaceter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniqueCharaceter.h; path = Classes/UniqueCharaceter.h; sourceTree = "<group>"; };
+		234E63EE19B0020400F0B93A /* UniqueCharaceter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniqueCharaceter.m; path = Classes/UniqueCharaceter.m; sourceTree = "<group>"; };
 		237EFE8219A315870092D328 /* CTCI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTCI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237EFE8519A315870092D328 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237EFE8719A315880092D328 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234E63F019B0024800F0B93A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				234E63ED19B0020300F0B93A /* UniqueCharaceter.h */,
+				234E63EE19B0020400F0B93A /* UniqueCharaceter.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		237EFE7919A315870092D328 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 				237EFE9719A315880092D328 /* Main.storyboard */,
 				237EFE9A19A315880092D328 /* ViewController.h */,
 				237EFE9B19A315880092D328 /* ViewController.m */,
+				234E63F019B0024800F0B93A /* Classes */,
 				237EFE9D19A315880092D328 /* Images.xcassets */,
 				237EFE8C19A315880092D328 /* Supporting Files */,
 			);
@@ -251,6 +264,7 @@
 			files = (
 				237EFE9C19A315880092D328 /* ViewController.m in Sources */,
 				237EFE9619A315880092D328 /* AppDelegate.m in Sources */,
+				234E63EF19B0020400F0B93A /* UniqueCharaceter.m in Sources */,
 				237EFE9219A315880092D328 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +470,7 @@
 				237EFEB619A315880092D328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		237EFEB719A315880092D328 /* Build configuration list for PBXNativeTarget "CTCITests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				237EFEB919A315880092D328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
