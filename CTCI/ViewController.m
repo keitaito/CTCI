@@ -51,6 +51,7 @@
     
     NSString *result = [NSString stringWithFormat:@"This string is unique? \n%s", ([self isUniqueChars:myString] ? "YES" : "NO")];
     self.myLabel.text = result;
+    [self reverseString:myString];
 }
 
 #pragma mark - Methods
@@ -79,49 +80,18 @@
     return YES;
 }
 
+- (void)reverseString:(NSString *)string {
+    NSMutableString *reversedString = [NSMutableString string];
+    NSInteger charIndex = [string length];
+    while (charIndex > 0) {
+        charIndex --;
+        NSRange subStrRange = NSMakeRange(charIndex, 1);
+        [reversedString appendString:[string substringWithRange:subStrRange]];
+    }
+    NSLog(@"%@", reversedString);
+}
 
 
-
-
-
-
-
-//- (BOOL)isUniqueChars:(NSString *)string
-//{
-//    if ([string length] > 256) {
-//        // is string greater than # of ASCII characters
-//        return NO;
-//    }
-//    
-//    bool char_set[256];
-//    memset(char_set, 0, 256);
-//    // Store an array of boolean values to indicate if the car is unique or not
-//    for (int i = 0; i < [string length]; i++) {
-//        int value = ([string characterAtIndex:i] - 'a');
-//        if (char_set[value]) {
-//            return NO; // duplicate
-//        }
-//        char_set[value] = YES;
-//    }
-//    
-//    // space = n
-//    // time = 0(n)
-//        
-//    return YES;
-//}
-
-//- (void)reverseChar:(NSString *)str
-//{
-//    NSMutableString *reversedString = [NSMutableString string];
-//    NSInteger charIndex = [str length];
-//    while (charIndex > 0) {
-//        charIndex--;
-//        NSRange subStrRange = NSMakeRange(charIndex, 1);
-//        [reversedString appendString:[str substringWithRange:subStrRange]];
-//    }
-//    NSLog(@"%@", reversedString);
-//}
-//
 //- (BOOL)checkPermutationWithStr1:(NSString *)str1 Str2:(NSString *)str2
 //{
 //    
