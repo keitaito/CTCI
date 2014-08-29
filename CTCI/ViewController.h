@@ -10,7 +10,7 @@
 #import "UniqueCharaceter.h"
 #import "ReverseString.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *myTextField;
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
