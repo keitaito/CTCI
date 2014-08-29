@@ -30,6 +30,9 @@
     myString = [[NSString alloc] init];
     uniqueCharacter = [[UniqueCharaceter alloc] init];
     reverseStringInstance = [[ReverseString alloc] init];
+    
+    // Set up UITextfieldDelegate
+    self.myTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +43,7 @@
 
 #pragma mark - Touch and Input Handling
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
     myString = self.myTextField.text;
 }
@@ -49,6 +51,12 @@
 - (IBAction)textReturn:(id)sender {
     [self.view endEditing:YES];
     myString = self.myTextField.text;
+}
+
+// Get input in a text field at real time.
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSLog(@"%@", string);
+    return YES;
 }
 
 #pragma mark - Actions
@@ -59,6 +67,7 @@
 }
 
 - (IBAction)reverseStrButton:(id)sender {
+    myString = self.myTextField.text;
     result = [reverseStringInstance reverseString:myString];
     [self outputMethod];
 }
